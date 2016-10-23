@@ -10,6 +10,7 @@ var express = require('express')
 
 var qbo=require('./routes/qbo');
 var yelp=require('./routes/yelp');
+var emerapi=require('./routes/emerapi');
 var ejs = require("ejs");
 
 
@@ -41,6 +42,7 @@ if ('development' == app.get('env')) {
 app.get('/admin', qbo.qboConnect);
 app.get('/srequest', qbo.qboConnectt);
 app.get('/yelp', yelp.index);
+app.get('/emergency', emerapi.index);
 
 
 http.createServer(app).listen(app.get('port'), function(){
