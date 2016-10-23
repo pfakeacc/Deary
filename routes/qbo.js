@@ -181,7 +181,7 @@ exports.qboConnect=function(req,res){
 			  console.log(JSON.stringify(customers));
 			});	{field: '', value: 'S%', operator: 'LIKE'}*/
 			qbo.findTimeActivities(function(err, billPayment) {
-				var p1= ["leak", "fire", "water", "gas", "alarm", "help", "pain", "fall", "fallen", "danger", "cant_get_up", "hurt", "safety", "broke", "broken"];
+				var p1= ["leak", "fire", "Water", "gas", "alarm", "help", "pain", "fall", "fallen", "danger", "cant_get_up", "hurt", "safety", "broke", "broken"];
 				var p2= ["rodent", "bug", "rat", "mouse", "cockroach", "heat", "toilet", "drain", "disposal", "mold"];
 				var p3=["light", "tv", "fan", "lightbulb", "air_conditioning", "sink", "tap", "tub", "shower", "washing_machine", "dryer", "dishwasher", "microwave", "oven", "stove", "refrigerator", "fridge"];
 				
