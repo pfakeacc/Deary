@@ -9,6 +9,7 @@ var express = require('express')
   , session = require('client-sessions');
 
 var qbo=require('./routes/qbo');
+var yelp=require('./routes/yelp');
 var ejs = require("ejs");
 
 
@@ -39,6 +40,7 @@ if ('development' == app.get('env')) {
 //app.get('/', routes.index);
 app.get('/admin', qbo.qboConnect);
 app.get('/srequest', qbo.qboConnectt);
+app.get('/yelp', yelp.index);
 
 
 http.createServer(app).listen(app.get('port'), function(){
