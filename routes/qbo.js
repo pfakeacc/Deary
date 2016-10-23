@@ -75,7 +75,9 @@ exports.qboConnect=function(req,res){
 		console.log(billPayment)
 	});
 	
-	res.render('index', { title: 'Express' });
+	//res.render('index', { title: 'Express' });
+	json_responses = {"status" : "success"};
+	res.send(json_responses);
 };
 
 
