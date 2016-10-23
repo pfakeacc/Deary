@@ -7,7 +7,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css">
 
 
 <title>Admin</title>
@@ -29,6 +29,7 @@
 				<th>Cost</th>
 			</tr>
 		</thead>
+		<tbody class="bg-danger">
 		<% for(var i in obj.QueryResponse.TimeActivity) { %> <%
 		if(((obj.QueryResponse.TimeActivity[i].BillableStatus)!="HasBeenBilled")&&
 		obj.QueryResponse.TimeActivity[i].priority =="very high") { %>
@@ -37,7 +38,7 @@
 		<input id="hours" type="hidden" value=<%=
 		obj.QueryResponse.TimeActivity[i].Hours %>>
 
-		<tbody>
+		
 			<tr class="bg-danger">
 				<td><%= obj.QueryResponse.TimeActivity[i].priority %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].CustomerRef.name %></td>
@@ -48,18 +49,17 @@
 				<td><%= obj.QueryResponse.TimeActivity[i].Hours %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].bill %></td>
 			</tr>
-		</tbody>
-		<% } %> <% } %> <% for(var i in obj.QueryResponse.TimeActivity) { %>
+		
+		
+		
+			
+		<% } %> <% } %> 
+		<tbody>
+		<% for(var i in obj.QueryResponse.TimeActivity) { %>
 		<%
 		if(((obj.QueryResponse.TimeActivity[i].BillableStatus)!="HasBeenBilled")&&
 		obj.QueryResponse.TimeActivity[i].priority =="high") { %>
-		<input id="hourlyRate" type="hidden" value=<%=
-		obj.QueryResponse.TimeActivity[i].HourlyRate %>>
-		<input id="hours" type="hidden" value=<%=
-		obj.QueryResponse.TimeActivity[i].Hours %>>
-
-		<tbody>
-			<tr>
+		<tr class="table-danger">
 				<td><%= obj.QueryResponse.TimeActivity[i].priority %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].CustomerRef.name %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].MetaData.CreateTime
@@ -69,8 +69,12 @@
 				<td><%= obj.QueryResponse.TimeActivity[i].Hours %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].bill %></td>
 			</tr>
+		<% } %> <% } %> 
+		
 		</tbody>
-		<% } %> <% } %> <% for(var i in obj.QueryResponse.TimeActivity) { %>
+		
+		<tbody>
+		<% for(var i in obj.QueryResponse.TimeActivity) { %>
 		<%
 		if(((obj.QueryResponse.TimeActivity[i].BillableStatus)!="HasBeenBilled")&&
 		obj.QueryResponse.TimeActivity[i].priority =="moderate") { %>
@@ -79,8 +83,8 @@
 		<input id="hours" type="hidden" value=<%=
 		obj.QueryResponse.TimeActivity[i].Hours %>>
 
-		<tbody>
-			<tr>
+		
+			<tr class="table-warning">
 				<td><%= obj.QueryResponse.TimeActivity[i].priority %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].CustomerRef.name %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].MetaData.CreateTime
@@ -90,8 +94,11 @@
 				<td><%= obj.QueryResponse.TimeActivity[i].Hours %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].bill %></td>
 			</tr>
+		
+		<% } %> <% } %> 
 		</tbody>
-		<% } %> <% } %> <% for(var i in obj.QueryResponse.TimeActivity) { %>
+		<tbody>
+		<% for(var i in obj.QueryResponse.TimeActivity) { %>
 		<%
 		if(((obj.QueryResponse.TimeActivity[i].BillableStatus)!="HasBeenBilled")&&
 		obj.QueryResponse.TimeActivity[i].priority =="low") { %>
@@ -100,7 +107,7 @@
 		<input id="hours" type="hidden" value=<%=
 		obj.QueryResponse.TimeActivity[i].Hours %>>
 
-		<tbody>
+		
 			<tr>
 				<td><%= obj.QueryResponse.TimeActivity[i].priority %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].CustomerRef.name %></td>
@@ -111,9 +118,9 @@
 				<td><%= obj.QueryResponse.TimeActivity[i].Hours %></td>
 				<td><%= obj.QueryResponse.TimeActivity[i].bill %></td>
 			</tr>
-		</tbody>
+		
 		<% } %> <% } %>
-
+</tbody>
 
 
 
